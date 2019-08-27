@@ -24,17 +24,17 @@ extension UIAlertController {
 }
 
 extension UIAlertController {
-    func addDefault(title: String, conditions: Bool, handler: ((UIAlertAction) -> Void)? = nil) {
+    func addDefault(title: String, conditions: Bool = true, handler: ((UIAlertAction) -> Void)? = nil) {
         guard conditions else { return }
         addAction(.init(title: title, style: .default, handler: handler))
     }
     
-    func addDestructive(title: String, conditions: Bool, handler: ((UIAlertAction) -> Void)? = nil) {
+    func addDestructive(title: String, conditions: Bool = true, handler: ((UIAlertAction) -> Void)? = nil) {
         guard conditions else { return }
         addAction(.init(title: title, style: .destructive, handler: handler))
     }
     
-    func addCancel(title: String = "キャンセル", conditions: Bool, handler: ((UIAlertAction) -> Void)? = nil) {
+    func addCancel(title: String = "キャンセル", conditions: Bool = true, handler: ((UIAlertAction) -> Void)? = nil) {
         guard conditions else { return }
         addAction(.init(title: title, style: .cancel, handler: handler))
     }
